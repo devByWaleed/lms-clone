@@ -5,57 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Management System - Virtual University of Pakistan</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" href="/assets/favicon.png" type="jpeg">
+    <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
 </head>
 
 <body>
-    <div class="main-container">
-        <div class="c1">
-            <div class="left-container">
-                <img src="https://vulms.vu.edu.pk/App_Themes/Default/Images/logos/Logo-New.png" alt="LMS LOGO">
-                <input type="text" placeholder="Student ID" maxlength="12">
-                <input type="text" placeholder="Password" maxlength="15">
-                <a href="https://vulms.vu.edu.pk/ForgotPassword/ForgotPassword.aspx" target="_blank">Forgot Password
+    <div class="flex flex-col">
+        <div class="flex items-center flex-col-reverse   lg:flex-row">
+            <div class="flex flex-col items-center w-full h-auto m-auto bg-[#ffffffef]   lg:h-[93vh]">
+                <img src="/assets/lms.png" alt="LMS LOGO" class="flex justify-center items-center m-7 py-8">
+
+                <input type="text" placeholder="Student ID" maxlength="12"
+                    class="flex flex-col items-center justify-center m-4 pl-2 py-2 w-5/12 rounded border-2 border-[#eeeded]    md:w-3/4 md:m-auto lg:w-2/5">
+                <input type="password" placeholder="Password" maxlength="15"
+                    class="flex flex-col items-center justify-center m-4 pl-2 py-2 w-5/12 rounded border-2 border-[#eeeded]    md:w-3/4 md:m-auto lg:w-2/5">
+                <a href="#" target="_blank" class="text-[#716ACA]">Forgot Password
                     ?</a>
-                <button id="logic">Sign In</button>
-                <div class="left-links">
-                    <a href="https://vulms.vu.edu.pk/NoticeBoard/NoticeBoard2.aspx"><i
-                            class="bi bi-bell-fill"></i>NoticeBoard</a>
-                    <a href="http://handbook.vu.edu.pk/"><i class="bi bi-book-fill"></i> Student Hand Book</a>
+                <button
+                    class="m-5 h-14 w-1/4 text-base rounded-[30px] border-transparent text-white bg-[#5867DD] hover:cursor-pointer hover:bg-[#3434e9]">Sign
+                    In</button>
+                <div class="flex flex-col gap-y-5 my-2">
+                    <a href="#" class="text-[#716ACA]"><i class="bi bi-bell-fill"></i>Notice Board</a>
+                    <a href="#" class="text-[#716ACA]"><i class="bi bi-book-fill"></i> Student Hand Book</a>
                 </div>
             </div>
 
-            <div id="right-container">
-                <div class="content">
-                    <h1>Learning Management System</h1>
-                    <p> "Where there is unity there is always victory. (Publilius Syrus)"</p>
+            <div
+                class="px-4 w-full h-auto bg-[url('/assets/bg-New.png')]  bg-center text-white bg-[#051664]  lg:flex lg:h-[93vh]  lg:justify-center">
+                <div class="flex flex-col gap-y-8  lg:flex items-center">
+                    <h1 class="mt-24 text-5xl text-shadow-custom  text-white     md:flex md:items-center md:justify-center md:text-5xl">Learning
+                        Management System</h1>
+                    <p class="font-extrabold mt-10 hidden   lg:block">" ہر انسان اپنی عقل کو بڑا سمجھتا ہے اور اپنے بچے
+                        کو خوبصورت" - "شیخ سعدی "
+                    </p>
                 </div>
             </div>
         </div>
 
 
-        <div class="c2">
-            <div class="footnote">
-                <div class="r1">
-                    <img src="https://vulms.vu.edu.pk/App_Themes/Default/Images/logos/logo-1.png" alt="">
-                    <img src="https://vulms.vu.edu.pk/App_Themes/Default/Images/logos/logo_govt_of_pakistan.png" alt="pak gov logo">
+        <div class="flex items-center px-4">
+            <div
+                class="flex items-center justify-center mt-14 flex-col gap-y-5 text-[#716ACA] bg-white   lg:h-[7vh] md:bg-white md:w-full md:flex-row md:m-0 md:justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="/assets/VU_Logo.png" alt="vu logo" class="h-7">
+                    <img src="/assets/logo_govt_of_pakistan_t55.png" alt="pak gov logo" class="h-7">
+                </div>
+                <div class="flex gap-x-3  md:order-4   lg:order-2">
                     <div><i class="bi bi-telephone"></i> Contacts Us</div>
                     <div style="font-weight: 600;"><i class="bi bi-question-circle"></i> Help</div>
                 </div>
-                <div class="r2">
-                    <a href="http://www.vu.edu.pk/">© 2020 IT Department, Virtual University of Pakistan.</a>
+                <div class="flex items-center gap-3  md:hidden  lg:block">
+                    <a href="#">© 2020 IT Department, Virtual University of Pakistan.</a>
                 </div>
-                <div class="r3">
-                    <a href="https://www.facebook.com/VirtualUniversityOfPakistan"><i style="color: #615abb;" class="bi bi-facebook"></i></a>
-                    <a href="https://twitter.com/VUPakistan"><i style="color: rgb(8, 128, 203);" class="bi bi-twitter"></i></a>
+                <div class="flex items-center gap-3    md:order-2   lg:order-4">
+                    <a href="#"><i class="bi bi-facebook text-[#716ACA]"></i></a>
+                    <a href="#"><i class="bi bi-twitter text-[#0880cb]"></i></a>
                 </div>
             </div>
         </div>
 
     </div>
-    <script src="script.js"></script>
 
 </body>
 

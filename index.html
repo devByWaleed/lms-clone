@@ -4,70 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Management System - Virtual University of Pakistan</title>
-    <link rel="website icon" href="assets/favicon.png" type="jpeg">
-    <link rel="stylesheet" href="/src/output.css">
+    <title>Learning Management System | Sign in</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .hero-title {
+            text-shadow: 0 4px 18px rgba(0, 0, 0, .35);
+        }
+
+        .hero-dots {
+            background-image: radial-gradient(rgba(255, 255, 255, .12) 1.5px, transparent 1.5px);
+            background-size: 26px 26px;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .rise {
+                animation: rise .6s ease-out both;
+            }
+
+            @keyframes rise {
+                from {
+                    opacity: 0;
+                    transform: translateY(14px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <div class="flex flex-col">
-        <div class="flex items-center flex-col-reverse   lg:flex-row">
-            <div class="flex flex-col items-center w-full h-auto m-auto bg-[#ffffffef]   lg:h-[93vh]">
-                <img src="assets/lms.png" alt="LMS LOGO" class="flex justify-center items-center m-7 py-8">
+<body class="min-h-dvh flex flex-col bg-white text-slate-700 antialiased">
 
-                <input type="text" placeholder="Student ID" maxlength="12"
-                    class="flex flex-col items-center justify-center m-4 pl-2 py-2 w-5/12 rounded border-2 border-[#eeeded]    md:w-3/4 md:m-auto lg:w-2/5">
-                <input type="password" placeholder="Password" maxlength="15"
-                    class="flex flex-col items-center justify-center m-4 pl-2 py-2 w-5/12 rounded border-2 border-[#eeeded]    md:w-3/4 md:m-auto lg:w-2/5">
-                <a href="#" target="_blank" class="text-[#716ACA]">Forgot Password
-                    ?</a>
-                <button
-                    class="m-5 h-14 w-1/4 text-base rounded-[30px] border-transparent text-white bg-[#5867DD] hover:cursor-pointer hover:bg-[#3434e9]">Sign
-                    In</button>
-                <div class="flex flex-col gap-y-5 my-2">
-                    <a href="#" class="text-[#716ACA]"><i class="bi bi-bell-fill"></i>Notice Board</a>
-                    <a href="#" class="text-[#716ACA]"><i class="bi bi-book-fill"></i> Student Hand Book</a>
-                </div>
+    <main class="flex-1 grid lg:grid-cols-2">
+
+        <!-- Hero: on top for phones/tablets, right-hand side on desktop -->
+        <section class="relative order-first lg:order-last overflow-hidden bg-[#051664] text-white
+                    flex items-center justify-center px-6 py-12 sm:py-16 lg:py-0">
+            <div class="hero-dots absolute inset-0" aria-hidden="true"></div>
+            <div class="relative w-full max-w-xl text-center lg:text-left rise">
+                <h1 class="hero-title font-bold leading-tight text-[clamp(2rem,5vw,3.5rem)]">
+                    Learning<br class="hidden sm:block lg:hidden"> Management System
+                </h1>
+                <p lang="ur" dir="rtl"
+                    class="mt-6 sm:mt-8 text-base sm:text-lg font-extrabold leading-8 text-white/90 max-w-md mx-auto lg:mx-0">
+                    " ہر انسان اپنی عقل کو بڑا سمجھتا ہے اور اپنے بچے کو خوبصورت" - "شیخ سعدی "
+                </p>
+            </div>
+        </section>
+
+        <!-- Sign in -->
+        <section class="order-last lg:order-first flex items-center justify-center bg-[#ffffffef] px-6 py-10 sm:py-14">
+            <div class="w-full max-w-sm rise">
+                <img src="assets/lms.png" alt="LMS logo" class="mx-auto mb-8 h-16 w-auto object-contain">
+
+                <form class="flex flex-col gap-4" onsubmit="event.preventDefault()">
+                    <div>
+                        <label for="sid" class="sr-only">Student ID</label>
+                        <input id="sid" type="text" inputmode="numeric" autocomplete="username" maxlength="12"
+                            placeholder="Student ID" class="w-full rounded border-2 border-[#eeeded] px-3 py-3 outline-none
+                          focus:border-[#5867DD] focus:ring-2 focus:ring-[#5867DD]/25">
+                    </div>
+
+                    <div class="relative">
+                        <label for="pw" class="sr-only">Password</label>
+                        <input id="pw" type="password" autocomplete="current-password" maxlength="15"
+                            placeholder="Password" class="w-full rounded border-2 border-[#eeeded] px-3 py-3 pr-11 outline-none
+                          focus:border-[#5867DD] focus:ring-2 focus:ring-[#5867DD]/25">
+                        <button type="button" id="toggle" aria-label="Show password"
+                            class="absolute inset-y-0 right-0 px-3 text-[#716ACA] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5867DD] rounded">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+
+                    <a href="#" class="self-center text-[#716ACA] hover:underline">Forgot password?</a>
+
+                    <button type="submit"
+                        class="mt-1 h-14 w-full rounded-[30px] border-transparent bg-[#5867DD] text-base text-white
+                         transition-colors hover:bg-[#3434e9] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#5867DD]/40">
+                        Sign In
+                    </button>
+                </form>
+
+                <nav class="mt-8 flex flex-col items-center gap-4" aria-label="Quick links">
+                    <a href="#" class="text-[#716ACA] hover:underline"><i class="bi bi-bell-fill"></i> Notice Board</a>
+                    <a href="#" class="text-[#716ACA] hover:underline"><i class="bi bi-book-fill"></i> Student
+                        Handbook</a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: stacks on phones, one row from md up -->
+    <footer class="bg-white text-[#716ACA] border-t border-[#eeeded]">
+        <div class="mx-auto flex max-w-screen-2xl flex-col items-center gap-4 px-6 py-5
+                md:flex-row md:justify-between md:gap-6 text-sm">
+            <div class="flex items-center gap-3">
+                <img src="assets/VU_Logo.png" alt="University logo" class="h-7 w-auto">
+                <img src="assets/logo_govt_of_pakistan_t55.png" alt="Government logo" class="h-7 w-auto">
             </div>
 
-            <div
-                class="px-4 w-full h-auto bg-[url('assets/bg-New.png')]  bg-center text-white bg-[#051664]  lg:flex lg:h-[93vh]  lg:justify-center">
-                <div class="flex flex-col gap-y-8  lg:flex items-center">
-                    <h1 class="mt-24 text-5xl text-shadow-custom  text-white     md:flex md:items-center md:justify-center md:text-5xl">Learning
-                        Management System</h1>
-                    <p class="font-extrabold mt-10 hidden   lg:block">" ہر انسان اپنی عقل کو بڑا سمجھتا ہے اور اپنے بچے
-                        کو خوبصورت" - "شیخ سعدی "
-                    </p>
-                </div>
+            <p class="order-last md:order-none text-center">
+                © <span id="year">2026</span> IT Department. All rights reserved.
+            </p>
+
+            <div class="flex items-center gap-5">
+                <a href="#" class="hover:underline"><i class="bi bi-telephone"></i> Contact us</a>
+                <a href="#" class="font-semibold hover:underline"><i class="bi bi-question-circle"></i> Help</a>
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook text-[#716ACA]"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter text-[#0880cb]"></i></a>
             </div>
         </div>
+    </footer>
 
-
-        <div class="flex items-center px-4">
-            <div
-                class="flex items-center justify-center mt-14 flex-col gap-y-5 text-[#716ACA] bg-white   lg:h-[7vh] md:bg-white md:w-full md:flex-row md:m-0 md:justify-between">
-                <div class="flex items-center gap-3">
-                    <img src="assets/VU_Logo.png" alt="vu logo" class="h-7">
-                    <img src="assets/logo_govt_of_pakistan_t55.png" alt="pak gov logo" class="h-7">
-                </div>
-                <div class="flex gap-x-3  md:order-4   lg:order-2">
-                    <div><i class="bi bi-telephone"></i> Contacts Us</div>
-                    <div style="font-weight: 600;"><i class="bi bi-question-circle"></i> Help</div>
-                </div>
-                <div class="flex items-center gap-3  md:hidden  lg:block">
-                    <a href="#">© 2020 IT Department, Virtual University of Pakistan.</a>
-                </div>
-                <div class="flex items-center gap-3    md:order-2   lg:order-4">
-                    <a href="#"><i class="bi bi-facebook text-[#716ACA]"></i></a>
-                    <a href="#"><i class="bi bi-twitter text-[#0880cb]"></i></a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const pw = document.getElementById('pw'), t = document.getElementById('toggle');
+        t.addEventListener('click', () => {
+            const show = pw.type === 'password';
+            pw.type = show ? 'text' : 'password';
+            t.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+            t.firstElementChild.className = show ? 'bi bi-eye-slash' : 'bi bi-eye';
+        });
+    </script>
 </body>
 
 </html>
